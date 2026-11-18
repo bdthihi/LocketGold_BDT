@@ -36,7 +36,7 @@ grep -RniE '0383961743|0335679617|shoppremium_vn2026_bot|tz4427|buiductai.png|LO
 grep -Rnl 'DucTai_media_welcome_v2' --include='*.js' . | wc -l
 
 # Kiểm tra cú pháp JS bằng Node.js
-for f in dvk-script-*.js; do node --check "$f" >/dev/null 2>&1 || echo "Syntax warning: $f"; done
+for f in bdt-script-*.js; do node --check "$f" >/dev/null 2>&1 || echo "Syntax warning: $f"; done
 ```
 
 ## Giới hạn
@@ -46,7 +46,7 @@ Bản ZIP vẫn chứa các tác giả gốc trong ghi công và đường dẫn
 ## Kiểm tra kỹ thuật đã thực hiện
 
 - Đã kiểm tra cú pháp tĩnh **121 file `.js`** bằng `node --check` (không chạy script).
-- **120 file hợp lệ**, **1 file `dvk-script-023.js` lỗi `Unexpected end of input` tại dòng 181**. Lỗi này đã có trong ZIP gốc, không phải do đổi nhận diện.
+- **120 file hợp lệ**, **1 file `bdt-script-023.js` lỗi `Unexpected end of input` tại dòng 181**. Lỗi này đã có trong ZIP gốc, không phải do đổi nhận diện.
 - **58/58** cấu hình `feature_discovery_popup_config` được tìm thấy đã có đầy đủ Zalo, Telegram, TikTok và ảnh mới.
-- **8** tham chiếu `locket_rc` trong các module vẫn gọi script từ máy chủ/repository khác; không có bản tương đương xác thực trong ZIP nên không tự động chuyển hướng. Các file có tham chiếu này: `dvk-module-032.sgmodule`, `dvk-module-037.sgmodule`, `dvk-module-040.sgmodule`, `dvk-module-049.sgmodule`, `dvk-module-055.sgmodule`, `dvk-module-057.sgmodule`, `dvk-module-062.sgmodule`. (File 049 có 2 tham chiếu.)
+- **8** tham chiếu `locket_rc` trong các module vẫn gọi script từ máy chủ/repository khác; không có bản tương đương xác thực trong ZIP nên không tự động chuyển hướng. Các file có tham chiếu này: `bdt-module-032.sgmodule`, `bdt-module-037.sgmodule`, `bdt-module-040.sgmodule`, `bdt-module-049.sgmodule`, `bdt-module-055.sgmodule`, `bdt-module-057.sgmodule`, `bdt-module-062.sgmodule`. (File 049 có 2 tham chiếu.)
 - Việc thay đổi nội dung quảng bá không xác nhận quyền sử dụng các thành phần gốc hoặc việc hoạt động của các tính năng có trong source.
